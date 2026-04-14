@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import Home from "../pages/Home";
 import Timeline from "../pages/Timeline";
 import Stats from "../pages/Stats";
+import FriendDetails from "../Components/FriendSection/FriendDetails";
 
 export const router = createBrowserRouter([
     {
@@ -18,6 +19,11 @@ export const router = createBrowserRouter([
             {
                 path: 'stats', Component: Stats
             },
+            {
+                path:'/friendsdetails/:id',
+                Component:FriendDetails,
+                loader:()=>fetch('/friend.json')
+            }
         ]
     }
 ])

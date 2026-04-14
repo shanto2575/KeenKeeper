@@ -8,7 +8,7 @@ const Banner = () => {
                 <h2 className='text-3xl lg:text-5xl font-bold'>Friends to keep close in your life</h2>
                 <p className='text-center text-xl text-gray-400'>Your personal shelf of meaningful connections. Browse, tend, and nurture the<br></br>
                     relationships that matter most.</p>
-                <button class="btn bg-black text-white flex gap-3 border-black">
+                <button className="btn bg-black text-white flex gap-3 border-black">
                     <FaPlus></FaPlus>Add a Friend
                 </button>
             </div>

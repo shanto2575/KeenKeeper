@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 const FriendCard = ({ friend }) => {
 
-    const { name, picture, days_since_contact, status, tags } = friend;
+    const {id, name, picture, days_since_contact, status, tags } = friend;
 
     const style = (status) => {
         if (status === 'overdue') {
@@ -17,7 +18,7 @@ const FriendCard = ({ friend }) => {
     }
 
     return (
-        <div className='p-5 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.25)] h-80 flex flex-col items-center justify-center space-y-4'>
+        <Link to={`/friendsdetails/${id}`} className='p-5 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.25)] h-80 flex flex-col items-center justify-center space-y-4'>
             <img src={picture} alt={name} className='rounded-full w-20 h-20' />
             <h2 className='text-2xl font-bold'>{name}</h2>
             <p className='text-gray-400'>{days_since_contact} days ago</p>
@@ -33,7 +34,7 @@ const FriendCard = ({ friend }) => {
             <span className={style(status)}>
                 {status}
             </span>
-        </div>
+        </Link>
     )
 }
 

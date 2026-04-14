@@ -28,8 +28,7 @@ const FriendDetails = () => {
     }
     const { name, picture, days_since_contact, email, bio, goal, next_due_date } = isExist;
 
-
-    const {handleCall}=useContext(FriendContext)
+    const {handleCall,handleText,handleVideo}=useContext(FriendContext)
     // console.log(handleCall,called)
     
     return (
@@ -71,11 +70,11 @@ const FriendDetails = () => {
                                 <img src={call} alt="call" />
                                 <span className='text-xl text-gray-700'>Call</span>
                             </button>
-                            <button className='btn py-15 flex flex-col items-center justify-center gap-3 '>
+                            <button onClick={()=>handleText(isExist)} className='btn py-15 flex flex-col items-center justify-center gap-3 '>
                                 <img src={text} alt="text" />
                                 <span className='text-xl text-gray-700'>Text</span>
                             </button>
-                            <button className='btn py-15 flex flex-col items-center justify-center gap-3 '>
+                            <button onClick={()=>handleVideo(isExist)} className='btn py-15 flex flex-col items-center justify-center gap-3 '>
                                 <img src={video} alt="video" />
                                 <span className='text-xl text-gray-600'>Video</span>
                             </button>

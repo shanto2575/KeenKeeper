@@ -1,28 +1,57 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FriendContext } from '../Context/FriendsProvider'
 import Text from '../Components/FriendTimeline/Text'
 import Video from '../Components/FriendTimeline/Video'
 import Calls from '../Components/FriendTimeline/Calls'
+import Data from '../assets/no-data.avif'
+
 const Timeline = () => {
-    const { called ,text,video} = useContext(FriendContext)
-    // console.log(called)
-    if(called.length===0 && text.length===0 && video.length===0){
-        return(
-            <div className='border h-[500px] flex items-center justify-center p-5 m-10 rounded-2xl'>
-                <p className='text-4xl font-bold'>No Data Found In Timeline</p>
-            </div>
-        )
+    const { called, text, video } = useContext(FriendContext)
+    const [filter, setFilter] = useState("all")
+    let filteredData = []
+
+    if (filter === "all") {
+        filteredData = [
+            ...text.map(item => ({ ...item, type: "text" })),
+            ...called.map(item => ({ ...item, type: "call" })),
+            ...video.map(item => ({ ...item, type: "video" }))
+        ]
     }
+    if (filter === "text") filteredData = text.map(item => ({ ...item, type: "text" }))
+    if (filter === "call") filteredData = called.map(item => ({ ...item, type: "call" }))
+    if (filter === "video") filteredData = video.map(item => ({ ...item, type: "video" }))
+
     return (
-        <div>
-            <div className='container mx-auto my-10 space-y-4'>
-                <h2 className='text-3xl font-bold'>Timeline</h2>
-                <div>
-                    {text.map(friend => <Text key={friend.id} friend={friend}></Text>)}
-                    {called.map(friend => <Calls key={friend.id} friend={friend}></Calls>)}
-                    {video.map(friend => <Video key={friend.id} friend={friend} ></Video>)}
-                </div>
+        <div className="container mx-auto my-10 space-y-4">
+            <h2 className="text-3xl font-bold">Timeline</h2>
+            <div>
+                {
+                    filteredData.length === 0 ? (<div className='flex flex-col items-center justify-center h-96 w-auto shadow-2xl space-y-4'>
+                        <img src={Data} alt="No DATA" className='h-64 w-auto rounded-full'/>
+                        <p className='font-bold text-2xl'>No Data in Timeline</p>
+                    </div>) : (
+                        <div className="flex justify-start">
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0} role="button" className="btn m-1">
+                                    Filter Timeline : {filter}
+                                </div>
+                                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box w-40 p-2 shadow">
+                                    <li onClick={() => setFilter("all")}><a>All</a></li>
+                                    <li onClick={() => setFilter("text")}><a>Text</a></li>
+                                    <li onClick={() => setFilter("call")}><a>Calls</a></li>
+                                    <li onClick={() => setFilter("video")}><a>Video</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    )
+                }
             </div>
+
+            {filteredData.map(friend => {
+                if (friend.type === "text") return <Text key={friend.id} friend={friend} />
+                if (friend.type === "call") return <Calls key={friend.id} friend={friend} />
+                if (friend.type === "video") return <Video key={friend.id} friend={friend} />
+            })}
         </div>
     )
 }

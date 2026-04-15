@@ -4,11 +4,13 @@ import Home from "../pages/Home";
 import Timeline from "../pages/Timeline";
 import Stats from "../pages/Stats";
 import FriendDetails from "../Components/FriendSection/FriendDetails";
+import Errors from "../Errors/Errors";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         Component: Layout,
+        errorElement:<Errors></Errors>,
         children: [
             {
                 index: true, Component: Home
@@ -20,10 +22,11 @@ export const router = createBrowserRouter([
                 path: 'stats', Component: Stats
             },
             {
-                path:'/friendsdetails/:id',
-                Component:FriendDetails,
-                loader:()=>fetch('/friend.json')
-            }
+                path: '/friendsdetails/:id',
+                Component: FriendDetails,
+                loader: () => fetch('/friend.json')
+            },
+            
         ]
     }
 ])

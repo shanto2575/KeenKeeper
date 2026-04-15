@@ -1,7 +1,7 @@
-import React from 'react'
 import { FaPlus } from 'react-icons/fa'
 
 const Banner = () => {
+
     return (
         <div className='container mx-auto border-b border-dashed border-gray-300'>
             <div className='flex flex-col justify-center items-center h-[300px] mx-auto space-y-7'>

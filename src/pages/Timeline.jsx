@@ -47,10 +47,10 @@ const Timeline = () => {
                 }
             </div>
 
-            {filteredData.map(friend => {
-                if (friend.type === "text") return <Text key={friend.id} friend={friend} />
-                if (friend.type === "call") return <Calls key={friend.id} friend={friend} />
-                if (friend.type === "video") return <Video key={friend.id} friend={friend} />
+            {filteredData.map((friend,index) => {
+                if (friend.type === "text") return <Text key={index} friend={friend} />
+                if (friend.type === "call") return <Calls key={index} friend={friend} />
+                if (friend.type === "video") return <Video key={index} friend={friend} />
             })}
         </div>
     )

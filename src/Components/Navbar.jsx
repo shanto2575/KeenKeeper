@@ -2,7 +2,7 @@ import React from 'react'
 import { FaHome } from 'react-icons/fa'
 import { IoTimeOutline } from 'react-icons/io5'
 import { ImStatsDots } from 'react-icons/im'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 const Navbar = () => {
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     )
 
     return (
-        <div className="navbar bg-base-100 flex justify-between px-5 shadow-sm">
+        <div to={'/'} className="navbar bg-base-100 flex justify-between px-5 shadow-sm">
 
             <div className="navbar-start">
                 <div className="dropdown">

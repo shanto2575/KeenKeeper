@@ -17,7 +17,7 @@ The goal of this project is to make sure no important relationship gets forgotte
 -Tailwind CSS
 -DaisyUI
 
-##State Management
+## State Management
 -React Context API
 -Hooks
 

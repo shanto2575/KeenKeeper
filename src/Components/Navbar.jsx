@@ -3,7 +3,7 @@ import { FaHome, FaTimes } from 'react-icons/fa'
 import { FaTimeline } from 'react-icons/fa6'
 import { ImStatsDots } from 'react-icons/im'
 import { IoTimeOutline } from 'react-icons/io5'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 const Navbar = () => {
     const link = <>
         <li><NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? 'bg-[#244D3F] text-white ':''}`}><FaHome></FaHome>Home</NavLink></li>
@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to={'/stats'} className={({isActive})=>`font-semibold ${isActive ? 'bg-[#244D3F] text-white ':''}`}><ImStatsDots></ImStatsDots> Stats</NavLink></li>
     </>
     return (
-        <div className="navbar bg-base-100 flex justify-between px-5 shadow-sm">
+        <Link to={'/'} className="navbar bg-base-100 flex justify-between px-5 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
                     {link}
                 </ul>
             </div>
-        </div>
+        </Link>
     )
 }
 

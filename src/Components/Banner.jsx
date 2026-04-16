@@ -4,7 +4,7 @@ const Banner = () => {
 
     return (
         <div className='container mx-auto border-b border-dashed border-gray-300'>
-            <div className='flex flex-col justify-center items-center h-[300px] mx-auto space-y-7'>
+            <div className='text-center flex flex-col justify-center items-center h-[300px] mx-auto space-y-7'>
                 <h2 className='text-3xl lg:text-5xl font-bold'>Friends to keep close in your life</h2>
                 <p className='text-center text-xl text-gray-400'>Your personal shelf of meaningful connections. Browse, tend, and nurture the<br></br>
                     relationships that matter most.</p>

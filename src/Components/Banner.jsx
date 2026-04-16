@@ -13,19 +13,19 @@ const Banner = () => {
                 </button>
             </div>
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-10 m-5 lg:mb-10 text-center'>
-                <div className='space-y-3 border rounded-2xl p-5'>
+                <div className='space-y-3 shadow-[0_0_5px_rgba(0,0,0,0.25)] rounded-2xl p-5'>
                     <h2 className='text-3xl font-bold'>10</h2>
                     <h2 className='text-gray-500'>Total Friends</h2>
                 </div>
-                <div className='space-y-3 border rounded-2xl p-5'>
+                <div className='space-y-3 shadow-[0_0_5px_rgba(0,0,0,0.25)] rounded-2xl p-5'>
                     <h2 className='text-3xl font-bold'>3</h2>
                     <h2 className='text-gray-500'>On Track</h2>
                 </div>
-                <div className='space-y-3 border rounded-2xl p-5'>
+                <div className='space-y-3 shadow-[0_0_5px_rgba(0,0,0,0.25)] rounded-2xl p-5'>
                     <h2 className='text-3xl font-bold'>6</h2>
                     <h2 className='text-gray-500'>Need Attention</h2>
                 </div>
-                <div className='space-y-3 border rounded-2xl p-5'>
+                <div className='space-y-3 shadow-[0_0_5px_rgba(0,0,0,0.25)] rounded-2xl p-5'>
                     <h2 className='text-3xl font-bold'>12</h2>
                     <h2 className='text-gray-500'>Interactions This Month</h2>
                 </div>

@@ -15,7 +15,6 @@ const Navbar = () => {
                     <FaHome /> Home
                 </NavLink>
             </li>
-
             <li>
                 <NavLink to="/timeline" className={({ isActive }) =>
                     `font-semibold flex items-center gap-2 ${isActive ? 'bg-[#244D3F] text-white' : ''}`
@@ -23,7 +22,6 @@ const Navbar = () => {
                     <IoTimeOutline /> Timeline
                 </NavLink>
             </li>
-
             <li>
                 <NavLink to="/stats" className={({ isActive }) =>
                     `font-semibold flex items-center gap-2 ${isActive ? 'bg-[#244D3F] text-white' : ''}`

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
-import { FriendContext } from '../Context/FriendsProvider'
 import Text from '../Components/FriendTimeline/Text'
 import Video from '../Components/FriendTimeline/Video'
 import Calls from '../Components/FriendTimeline/Calls'
 import Data from '../assets/no-data.avif'
+import { FriendContext } from '../Context/CreateContext'
 
 const Timeline = () => {
     const { called, text, video } = useContext(FriendContext)

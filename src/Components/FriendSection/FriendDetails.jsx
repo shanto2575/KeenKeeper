@@ -6,8 +6,9 @@ import { RiDeleteBin2Fill } from 'react-icons/ri'
 import call from '../../assets/call.png'
 import text from '../../assets/text.png'
 import video from '../../assets/video.png'
-import { FriendContext } from '../../Context/FriendsProvider'
+// import { FriendContext } from '../../Context/FriendsProvider'
 import { useContext } from 'react'
+import { FriendContext } from '../../Context/CreateContext'
 
 const FriendDetails = () => {
     const { id } = useParams()

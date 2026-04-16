@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Legend, Pie, PieChart, Tooltip, ResponsiveContainer } from 'recharts';
-import { FriendContext } from '../Context/FriendsProvider';
 import Data from '../assets/no-data.avif'
+import { FriendContext } from '../Context/CreateContext';
 
 
 const Stats = () => {

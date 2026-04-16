@@ -1,7 +1,8 @@
-import React, { createContext, useState } from 'react'
+import React, {  useState } from 'react'
 import { toast } from 'react-toastify'
+import { FriendContext } from './CreateContext'
 
-export const FriendContext = createContext()
+// export const FriendContext = createContext()
 const FriendsProvider = ({ children }) => {
 
     const [called, setCalled] = useState([])

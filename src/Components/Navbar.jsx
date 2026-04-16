@@ -47,7 +47,7 @@ const Navbar = () => {
                 </div>
 
                 <h2 className="text-2xl font-bold">
-                    Keen<span className='text-green-950'>Keeper</span>
+                    Keen<span className='text-green-950'>Keeper!!!!!</span>
                 </h2>
             </div>
 

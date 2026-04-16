@@ -1,8 +1,7 @@
 import texts from '../../assets/text.png'
 
-const Text = ({ friend ,sortingType}) => {
+const Text = ({ friend }) => {
     console.log(friend)
-    console.log(sortingType)
     return (
         <div>
             <div>
